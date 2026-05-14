@@ -49,10 +49,11 @@
 ```
 mia_medical
 ├── branches, branch_operating_hours
-├── users, user_auth_providers, customer_profiles, user_addresses
+├── users, user_auth_providers, customer_profiles, user_addresses,
+│   refresh_tokens, password_reset_tokens
 ├── roles, permissions, role_permissions, user_branch_roles
-├── categories, products, product_media, product_variants, product_specs,
-│   product_rental_tiers, branch_product_overrides
+├── categories, products, product_categories, product_media, product_variants,
+│   product_specs, product_rental_tiers, branch_product_overrides
 ├── carts, cart_items
 ├── orders, order_items, order_status_history
 ├── rentals, rental_status_history, rental_photos, rental_extensions
@@ -238,6 +239,35 @@ CREATE TABLE user_addresses (
     updated_at      TIMESTAMPTZ NOT NULL DEFAULT now(),
     deleted_at      TIMESTAMPTZ
 );
+
+-- ─── REFRESH TOKENS (JWT rotation) ──────────────────────
+
+CREATE TABLE refresh_tokens (
+    id              UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    user_id         UUID NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    token_hash      TEXT NOT NULL UNIQUE,                   -- SHA-256 hash of token
+    device_info     VARCHAR(500),                           -- browser/app identifier
+    ip_address      INET,
+    expires_at      TIMESTAMPTZ NOT NULL,
+    revoked_at      TIMESTAMPTZ,
+    created_at      TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE INDEX idx_refresh_tokens_user ON refresh_tokens (user_id) WHERE revoked_at IS NULL;
+CREATE INDEX idx_refresh_tokens_expires ON refresh_tokens (expires_at) WHERE revoked_at IS NULL;
+
+-- ─── PASSWORD RESET TOKENS ──────────────────────────────
+
+CREATE TABLE password_reset_tokens (
+    id              UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    user_id         UUID NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    token_hash      TEXT NOT NULL UNIQUE,                   -- SHA-256 hash of token
+    expires_at      TIMESTAMPTZ NOT NULL,
+    used_at         TIMESTAMPTZ,
+    created_at      TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE INDEX idx_password_reset_tokens_user ON password_reset_tokens (user_id);
 ```
 
 ---
@@ -1233,9 +1263,9 @@ blog_posts ───────────┬─── blog_post_categories �
 | Module | Tables | Description |
 |---|---|---|
 | Branches | 2 | branches, operating_hours |
-| Users & Auth | 4 | users, auth_providers, customer_profiles, addresses |
+| Users & Auth | 6 | users, auth_providers, customer_profiles, addresses, refresh_tokens, password_reset_tokens |
 | RBAC | 4 | permissions, roles, role_permissions, user_branch_roles |
-| Products | 7 | categories, products, media, variants, specs, rental_tiers, branch_overrides |
+| Products | 8 | categories, products, product_categories, media, variants, specs, rental_tiers, branch_overrides |
 | Cart | 2 | carts, cart_items |
 | Orders | 3 | orders, order_items, status_history |
 | Rentals | 4 | rentals, status_history, photos, extensions |
@@ -1249,7 +1279,7 @@ blog_posts ───────────┬─── blog_post_categories �
 | Reviews & Q&A | 3 | reviews, questions, answers |
 | GDPR | 2 | gdpr_requests, communication_preferences |
 | Audit | 1 | audit_logs |
-| **Total** | **50** | |
+| **Total** | **54** | |
 
 ---
 
