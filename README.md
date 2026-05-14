@@ -1,14 +1,21 @@
-# MIA Medical Italia — Database Design
+# MIA Medical Italia — Database Design & UI/UX
 
-Complete PostgreSQL database schema for the MIA Medical Italia platform.
+Complete PostgreSQL database schema and UI/UX design system for the MIA Medical Italia platform.
 
 ## Overview
 
+### Database
 - **50 tables** across **17 modules**
 - PostgreSQL 16+ with PostGIS, pg_trgm, pgcrypto
 - Multi-tenant (branch-per-tenant) with Row-Level Security
 - Italian fiscal compliance (SDI electronic invoicing)
 - Full SQL DDL with triggers, indexes, and constraints
+
+### UI/UX
+- **Design System** — colors, typography, spacing, components, accessibility standards
+- **11 Interactive Wireframes** — public site + admin dashboard
+- Elderly-friendly design (WCAG AA/AAA, large touch targets, high contrast)
+- 🔗 **[Live Preview](https://wireframes-sshizxks.devinapps.com)**
 
 ## Modules
 
@@ -32,9 +39,31 @@ Complete PostgreSQL database schema for the MIA Medical Italia platform.
 | 16 | GDPR & Communication Preferences | 2 |
 | 17 | Audit Log | 1 |
 
-## File
+## Files
 
+### Database
 - [`database-design.md`](./database-design.md) — Full database design document with SQL DDL, indexes, triggers, ER diagram, and design decisions.
+
+### UI/UX
+- [`design-system.md`](./design-system.md) — Design system & style guide (colors, typography, spacing, components, accessibility)
+- [`wireframes/index.html`](./wireframes/index.html) — Interactive wireframe prototypes (11 screens)
+
+#### Wireframe Screens
+
+**Public Website (7 screens):**
+1. Homepage — Hero, categories, featured products, trust bar, CTA
+2. Catalogo Prodotti — Filters sidebar, product grid, sorting
+3. Dettaglio Prodotto — Gallery, rental tiers, pricing, availability
+4. Checkout (4-step) — Stepper, form, invoice detection, order summary
+5. Trova Punto Vendita — Search, store cards, map
+6. Login/Registrazione — SPID, CIE, email/password
+7. Area Cliente — Dashboard, active rentals, orders, notifications
+
+**Admin Dashboard (4 screens):**
+1. Dashboard Overview — Stats, revenue chart, recent orders, expiring rentals
+2. Gestione Prodotti — Table, filters, CRUD actions, pagination
+3. Ordini & Noleggi — Tab filtering, date range, order table
+4. Ruoli & Permessi — Role cards, permission matrix (RBAC)
 
 ## License
 
