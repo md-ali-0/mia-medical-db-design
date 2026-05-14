@@ -1,0 +1,43 @@
+/* ═══ MIA Medical Italia — Design Tokens ═══ */
+
+:root {
+    --color-primary: #0066CC;
+    --color-primary-dark: #004C99;
+    --color-primary-light: #E6F0FF;
+    --color-secondary: #00875A;
+    --color-secondary-dark: #006644;
+    --color-secondary-light: #E6F5EE;
+    --color-accent: #FF8800;
+    --color-accent-dark: #CC6D00;
+    --color-accent-light: #FFF3E6;
+    --color-danger: #CC3333;
+    --color-danger-light: #FFE6E6;
+    --color-warning: #E6A800;
+    --color-warning-light: #FFF8E6;
+    --color-info-light: #E6F0FF;
+
+    --color-text: #1A1A2E;
+    --color-text-secondary: #4A4A68;
+    --color-text-muted: #8888A0;
+    --color-border: #D0D0DC;
+    --color-border-light: #E8E8F0;
+    --color-bg: #F5F5FA;
+    --color-surface: #FFFFFF;
+
+    --color-sidebar-bg: #1A1A2E;
+    --color-sidebar-text: #C8C8D8;
+    --color-sidebar-active: #0066CC;
+
+    --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    --radius-full: 9999px;
+
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+    --shadow-lg: 0 8px 24px rgba(0,0,0,0.12);
+    --shadow-focus: 0 0 0 3px rgba(0,102,204,0.4);
+}

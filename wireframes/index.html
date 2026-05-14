@@ -1,0 +1,1534 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIA Medical Italia — Wireframes & Design System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="tokens.css">
+    <link rel="stylesheet" href="wireframe.css">
+</head>
+<body>
+    <!-- ═══ NAVIGATION HUB ═══ -->
+    <div class="hub">
+        <div class="hub-header">
+            <div class="hub-logo">MIA<span>Medical</span></div>
+            <h1>Wireframes & Design System</h1>
+            <p>Interactive prototypes for MIA Medical Italia platform</p>
+        </div>
+
+        <div class="hub-grid">
+            <!-- PUBLIC WEBSITE -->
+            <div class="hub-section">
+                <h2>🌐 Public Website</h2>
+                <div class="hub-cards">
+                    <a href="#" class="hub-card" onclick="showPage('homepage')">
+                        <div class="hub-card-icon">🏠</div>
+                        <h3>Homepage</h3>
+                        <p>Hero, categorie, prodotti in evidenza</p>
+                    </a>
+                    <a href="#" class="hub-card" onclick="showPage('catalogue')">
+                        <div class="hub-card-icon">📦</div>
+                        <h3>Catalogo Prodotti</h3>
+                        <p>Filtri, ricerca, griglia prodotti</p>
+                    </a>
+                    <a href="#" class="hub-card" onclick="showPage('product-detail')">
+                        <div class="hub-card-icon">🔍</div>
+                        <h3>Dettaglio Prodotto</h3>
+                        <p>Immagini, prezzi, noleggio, recensioni</p>
+                    </a>
+                    <a href="#" class="hub-card" onclick="showPage('checkout')">
+                        <div class="hub-card-icon">🛒</div>
+                        <h3>Checkout (4 Step)</h3>
+                        <p>Consegna → Dati → Pagamento → Conferma</p>
+                    </a>
+                    <a href="#" class="hub-card" onclick="showPage('store-locator')">
+                        <div class="hub-card-icon">📍</div>
+                        <h3>Trova Punto Vendita</h3>
+                        <p>Mappa, branch vicini, orari</p>
+                    </a>
+                    <a href="#" class="hub-card" onclick="showPage('login')">
+                        <div class="hub-card-icon">🔐</div>
+                        <h3>Login / Registrazione</h3>
+                        <p>SPID, CIE, email/password</p>
+                    </a>
+                    <a href="#" class="hub-card" onclick="showPage('customer-dashboard')">
+                        <div class="hub-card-icon">👤</div>
+                        <h3>Area Cliente</h3>
+                        <p>Ordini, noleggi, fatture, profilo</p>
+                    </a>
+                </div>
+            </div>
+
+            <!-- ADMIN DASHBOARD -->
+            <div class="hub-section">
+                <h2>⚙️ Admin Dashboard</h2>
+                <div class="hub-cards">
+                    <a href="#" class="hub-card" onclick="showPage('admin-dashboard')">
+                        <div class="hub-card-icon">📊</div>
+                        <h3>Dashboard Overview</h3>
+                        <p>Stats, grafici, attività recenti</p>
+                    </a>
+                    <a href="#" class="hub-card" onclick="showPage('admin-products')">
+                        <div class="hub-card-icon">📦</div>
+                        <h3>Gestione Prodotti</h3>
+                        <p>CRUD, override branch, inventario</p>
+                    </a>
+                    <a href="#" class="hub-card" onclick="showPage('admin-orders')">
+                        <div class="hub-card-icon">🛒</div>
+                        <h3>Ordini & Noleggi</h3>
+                        <p>Lista ordini, stato, dettagli</p>
+                    </a>
+                    <a href="#" class="hub-card" onclick="showPage('admin-roles')">
+                        <div class="hub-card-icon">🔐</div>
+                        <h3>Ruoli & Permessi</h3>
+                        <p>RBAC, branch assignment</p>
+                    </a>
+                </div>
+            </div>
+
+            <!-- DESIGN SYSTEM -->
+            <div class="hub-section">
+                <h2>🎨 Design System</h2>
+                <div class="hub-cards">
+                    <a href="#" class="hub-card" onclick="showPage('ds-colors')">
+                        <div class="hub-card-icon">🎨</div>
+                        <h3>Colori</h3>
+                        <p>Palette completa con token</p>
+                    </a>
+                    <a href="#" class="hub-card" onclick="showPage('ds-typography')">
+                        <div class="hub-card-icon">🔤</div>
+                        <h3>Tipografia</h3>
+                        <p>Scale, pesi, gerarchie</p>
+                    </a>
+                    <a href="#" class="hub-card" onclick="showPage('ds-components')">
+                        <div class="hub-card-icon">🧩</div>
+                        <h3>Componenti</h3>
+                        <p>Buttons, inputs, cards, badges</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- PAGE: HOMEPAGE                                  -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <div id="page-homepage" class="page" style="display:none">
+        <button class="back-btn" onclick="showHub()">← Torna all'indice</button>
+        <div class="page-label">PUBLIC WEBSITE</div>
+        <h2 class="page-title">Homepage</h2>
+
+        <div class="wireframe-container">
+            <!-- Top Bar -->
+            <div class="wf-topbar">
+                <div class="wf-topbar-left">
+                    <span>📍 Roma: Via Talamini 44</span>
+                    <span>📍 Firenze: Viale Guidoni 129</span>
+                </div>
+                <div class="wf-topbar-right">
+                    <span>📞 800 031962</span>
+                    <span>📧 info@miamedicalitalia.it</span>
+                    <span style="color:#25D366">💬 WhatsApp</span>
+                </div>
+            </div>
+
+            <!-- Header -->
+            <div class="wf-header">
+                <div class="wf-logo">MIA<span>Medical</span></div>
+                <div class="wf-search">
+                    <input type="text" placeholder="🔍 Cerca prodotti..." class="wf-search-input">
+                </div>
+                <div class="wf-header-actions">
+                    <span>A A+ A++</span>
+                    <span>👤 Accedi</span>
+                    <span>🛒 Carrello (0)</span>
+                </div>
+            </div>
+
+            <!-- Nav -->
+            <nav class="wf-nav">
+                <a href="#" class="wf-nav-link active">Home</a>
+                <a href="#" class="wf-nav-link">Noleggio ▾</a>
+                <a href="#" class="wf-nav-link">Vendita ▾</a>
+                <a href="#" class="wf-nav-link">Punti Vendita</a>
+                <a href="#" class="wf-nav-link">Blog</a>
+                <a href="#" class="wf-nav-link">Chi Siamo</a>
+                <a href="#" class="wf-nav-link">Contatti</a>
+            </nav>
+
+            <!-- Hero -->
+            <div class="wf-hero">
+                <div class="wf-hero-content">
+                    <p class="wf-hero-sub">Roma | Firenze</p>
+                    <h1>Noleggio Elettromedicali<br>Online</h1>
+                    <p class="wf-hero-desc">Carrozzine, letti ortopedici, magnetoterapia e molto altro. Consegna a domicilio in tutta Italia.</p>
+                    <div class="wf-hero-buttons">
+                        <button class="btn btn-accent btn-lg">Noleggia Ora — da €1/giorno</button>
+                        <button class="btn btn-secondary btn-lg">Scopri il Catalogo</button>
+                    </div>
+                </div>
+                <div class="wf-hero-image">
+                    <div class="wf-placeholder-img">
+                        Hero Image<br>Elderly person in wheelchair<br>smiling with caregiver
+                    </div>
+                </div>
+            </div>
+
+            <!-- Trust Bar -->
+            <div class="wf-trust-bar">
+                <div class="wf-trust-item">
+                    <span class="wf-trust-icon">🚚</span>
+                    <strong>Consegna Gratuita</strong>
+                    <small>Ordini sopra €50</small>
+                </div>
+                <div class="wf-trust-item">
+                    <span class="wf-trust-icon">📞</span>
+                    <strong>Assistenza Dedicata</strong>
+                    <small>Lun-Ven 9:00-18:00</small>
+                </div>
+                <div class="wf-trust-item">
+                    <span class="wf-trust-icon">✓</span>
+                    <strong>Dispositivi Certificati</strong>
+                    <small>Marchio CE</small>
+                </div>
+                <div class="wf-trust-item">
+                    <span class="wf-trust-icon">💳</span>
+                    <strong>Pagamento Sicuro</strong>
+                    <small>Carta, PayPal, Bonifico</small>
+                </div>
+            </div>
+
+            <!-- Categories -->
+            <div class="wf-section">
+                <h2 class="wf-section-title">Categorie Noleggio</h2>
+                <div class="wf-category-grid">
+                    <div class="wf-category-card">
+                        <div class="wf-placeholder-img small">Magnetoterapia</div>
+                        <h3>Magnetoterapia</h3>
+                    </div>
+                    <div class="wf-category-card">
+                        <div class="wf-placeholder-img small">Carrozzine</div>
+                        <h3>Carrozzine</h3>
+                    </div>
+                    <div class="wf-category-card">
+                        <div class="wf-placeholder-img small">Letti Ortopedici</div>
+                        <h3>Letti Ortopedici</h3>
+                    </div>
+                    <div class="wf-category-card">
+                        <div class="wf-placeholder-img small">Elettrostimolatori</div>
+                        <h3>TENS</h3>
+                    </div>
+                    <div class="wf-category-card">
+                        <div class="wf-placeholder-img small">Deambulatori</div>
+                        <h3>Deambulatori</h3>
+                    </div>
+                    <div class="wf-category-card">
+                        <div class="wf-placeholder-img small">Pressoterapia</div>
+                        <h3>Pressoterapia</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Featured Products -->
+            <div class="wf-section">
+                <h2 class="wf-section-title">Prodotti in Evidenza</h2>
+                <div class="wf-product-grid">
+                    <div class="wf-product-card">
+                        <div class="wf-placeholder-img product">Magnetoterapia<br>LaMagneto Pro</div>
+                        <div class="wf-product-info">
+                            <span class="wf-badge-category">NOLEGGIO</span>
+                            <h3>LaMagneto Pro 1000</h3>
+                            <p>Magnetoterapia alta frequenza</p>
+                            <div class="wf-stars">★★★★★ (48)</div>
+                            <div class="wf-price">€5,00 <small>/giorno</small></div>
+                            <small class="wf-vat">IVA inclusa</small>
+                            <button class="btn btn-primary btn-block">Noleggia Ora</button>
+                        </div>
+                    </div>
+                    <div class="wf-product-card">
+                        <div class="wf-placeholder-img product">Carrozzina<br>Pieghevole</div>
+                        <div class="wf-product-info">
+                            <span class="wf-badge-category">NOLEGGIO</span>
+                            <h3>Carrozzina Pieghevole Light</h3>
+                            <p>Ultraleggera, 12kg</p>
+                            <div class="wf-stars">★★★★☆ (32)</div>
+                            <div class="wf-price">€3,00 <small>/giorno</small></div>
+                            <small class="wf-vat">IVA inclusa</small>
+                            <button class="btn btn-primary btn-block">Noleggia Ora</button>
+                        </div>
+                    </div>
+                    <div class="wf-product-card">
+                        <div class="wf-placeholder-img product">Letto<br>Ortopedico</div>
+                        <div class="wf-product-info">
+                            <span class="wf-badge-category">NOLEGGIO</span>
+                            <h3>Letto Ospedaliero Elettrico</h3>
+                            <p>3 motori, sponde, materasso</p>
+                            <div class="wf-stars">★★★★★ (27)</div>
+                            <div class="wf-price">€8,00 <small>/giorno</small></div>
+                            <small class="wf-vat">IVA inclusa</small>
+                            <button class="btn btn-primary btn-block">Noleggia Ora</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="wf-cta-banner">
+                <h2>Hai bisogno di assistenza?</h2>
+                <p>Il nostro team è a tua disposizione per aiutarti a scegliere il prodotto giusto.</p>
+                <div class="wf-cta-buttons">
+                    <button class="btn btn-accent btn-lg">📞 Chiamaci: 800 031962</button>
+                    <button class="btn btn-secondary btn-lg">💬 Scrivici su WhatsApp</button>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="wf-footer">
+                <div class="wf-footer-grid">
+                    <div>
+                        <h4>MIA Medical Italia</h4>
+                        <p>Noleggio e vendita elettromedicali professionali.</p>
+                    </div>
+                    <div>
+                        <h4>Link Utili</h4>
+                        <ul><li>Chi Siamo</li><li>Blog</li><li>FAQ</li><li>Contatti</li></ul>
+                    </div>
+                    <div>
+                        <h4>Legale</h4>
+                        <ul><li>Privacy Policy</li><li>Cookie Policy</li><li>Termini e Condizioni</li><li>Diritto di Recesso</li></ul>
+                    </div>
+                    <div>
+                        <h4>Contattaci</h4>
+                        <ul><li>📞 800 031962</li><li>📧 info@miamedicalitalia.it</li><li>💬 WhatsApp</li></ul>
+                    </div>
+                </div>
+                <div class="wf-footer-bottom">
+                    <p>© 2026 MIA Medical Italia S.r.l. — P.IVA 12345678901</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- PAGE: PRODUCT CATALOGUE                         -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <div id="page-catalogue" class="page" style="display:none">
+        <button class="back-btn" onclick="showHub()">← Torna all'indice</button>
+        <div class="page-label">PUBLIC WEBSITE</div>
+        <h2 class="page-title">Catalogo Prodotti</h2>
+
+        <div class="wireframe-container">
+            <div class="wf-header compact">
+                <div class="wf-logo">MIA<span>Medical</span></div>
+                <div class="wf-search"><input type="text" placeholder="🔍 Cerca prodotti..." class="wf-search-input"></div>
+                <div class="wf-header-actions"><span>👤</span> <span>🛒 (2)</span></div>
+            </div>
+            <nav class="wf-nav">
+                <a href="#" class="wf-nav-link">Home</a>
+                <a href="#" class="wf-nav-link active">Noleggio ▾</a>
+                <a href="#" class="wf-nav-link">Vendita ▾</a>
+                <a href="#" class="wf-nav-link">Punti Vendita</a>
+                <a href="#" class="wf-nav-link">Blog</a>
+            </nav>
+
+            <!-- Breadcrumb -->
+            <div class="wf-breadcrumb">
+                <a href="#">Home</a> › <a href="#">Noleggio</a> › <strong>Magnetoterapia</strong>
+            </div>
+
+            <div class="wf-catalogue-layout">
+                <!-- Sidebar Filters -->
+                <aside class="wf-filters">
+                    <h3>Filtra per</h3>
+
+                    <div class="wf-filter-group">
+                        <h4>Categoria</h4>
+                        <label class="wf-checkbox"><input type="checkbox" checked> Magnetoterapia (12)</label>
+                        <label class="wf-checkbox"><input type="checkbox"> Carrozzine (8)</label>
+                        <label class="wf-checkbox"><input type="checkbox"> Letti ortopedici (5)</label>
+                        <label class="wf-checkbox"><input type="checkbox"> TENS (6)</label>
+                        <label class="wf-checkbox"><input type="checkbox"> Deambulatori (4)</label>
+                        <label class="wf-checkbox"><input type="checkbox"> Pressoterapia (3)</label>
+                    </div>
+
+                    <div class="wf-filter-group">
+                        <h4>Tipo</h4>
+                        <label class="wf-checkbox"><input type="checkbox" checked> Noleggio</label>
+                        <label class="wf-checkbox"><input type="checkbox"> Vendita</label>
+                    </div>
+
+                    <div class="wf-filter-group">
+                        <h4>Prezzo Noleggio (giorno)</h4>
+                        <div class="wf-price-range">
+                            <input type="number" placeholder="Min €" class="wf-input-small">
+                            <span>—</span>
+                            <input type="number" placeholder="Max €" class="wf-input-small">
+                        </div>
+                    </div>
+
+                    <div class="wf-filter-group">
+                        <h4>Disponibilità</h4>
+                        <label class="wf-checkbox"><input type="checkbox" checked> Roma</label>
+                        <label class="wf-checkbox"><input type="checkbox" checked> Firenze</label>
+                    </div>
+
+                    <button class="btn btn-primary btn-block" style="margin-top:16px">Applica Filtri</button>
+                    <button class="btn btn-ghost btn-block">Azzera Filtri</button>
+                </aside>
+
+                <!-- Product Grid -->
+                <div class="wf-catalogue-main">
+                    <div class="wf-catalogue-header">
+                        <span>Mostrando <strong>12 prodotti</strong> in Magnetoterapia</span>
+                        <select class="wf-select-sort">
+                            <option>Ordina per: Più rilevanti</option>
+                            <option>Prezzo: basso → alto</option>
+                            <option>Prezzo: alto → basso</option>
+                            <option>Più recenti</option>
+                            <option>Più recensiti</option>
+                        </select>
+                    </div>
+
+                    <div class="wf-product-grid">
+                        <div class="wf-product-card">
+                            <div class="wf-badge-available">✓ Disponibile</div>
+                            <div class="wf-placeholder-img product">Magnetoterapia<br>LaMagneto X</div>
+                            <div class="wf-product-info">
+                                <span class="wf-badge-category">NOLEGGIO</span>
+                                <h3>LaMagneto X 1000 Gauss</h3>
+                                <p>Alta frequenza, 2 solenoidi</p>
+                                <div class="wf-stars">★★★★★ (48)</div>
+                                <div class="wf-price">€5,00 <small>/giorno</small></div>
+                                <small class="wf-vat">IVA inclusa</small>
+                                <button class="btn btn-primary btn-block">Noleggia Ora</button>
+                            </div>
+                        </div>
+                        <div class="wf-product-card">
+                            <div class="wf-badge-available">✓ Disponibile</div>
+                            <div class="wf-placeholder-img product">Magnetoterapia<br>MagPro 500</div>
+                            <div class="wf-product-info">
+                                <span class="wf-badge-category">NOLEGGIO</span>
+                                <h3>MagPro 500 Portatile</h3>
+                                <p>Compatto, batteria 8h</p>
+                                <div class="wf-stars">★★★★☆ (23)</div>
+                                <div class="wf-price">€3,50 <small>/giorno</small></div>
+                                <small class="wf-vat">IVA inclusa</small>
+                                <button class="btn btn-primary btn-block">Noleggia Ora</button>
+                            </div>
+                        </div>
+                        <div class="wf-product-card">
+                            <div class="wf-badge-available low">⚠ Ultime 2 unità</div>
+                            <div class="wf-placeholder-img product">Magnetoterapia<br>DuoMag</div>
+                            <div class="wf-product-info">
+                                <span class="wf-badge-category">NOLEGGIO · VENDITA</span>
+                                <h3>DuoMag Professionale</h3>
+                                <p>Doppio canale, display LCD</p>
+                                <div class="wf-stars">★★★★★ (67)</div>
+                                <div class="wf-price">€7,00 <small>/giorno</small></div>
+                                <small class="wf-vat">IVA inclusa · Acquisto: €890,00</small>
+                                <button class="btn btn-primary btn-block">Noleggia Ora</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- PAGE: PRODUCT DETAIL                            -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <div id="page-product-detail" class="page" style="display:none">
+        <button class="back-btn" onclick="showHub()">← Torna all'indice</button>
+        <div class="page-label">PUBLIC WEBSITE</div>
+        <h2 class="page-title">Dettaglio Prodotto</h2>
+
+        <div class="wireframe-container">
+            <div class="wf-header compact">
+                <div class="wf-logo">MIA<span>Medical</span></div>
+                <div class="wf-search"><input type="text" placeholder="🔍 Cerca..." class="wf-search-input"></div>
+                <div class="wf-header-actions"><span>👤</span> <span>🛒 (2)</span></div>
+            </div>
+
+            <div class="wf-breadcrumb">
+                <a href="#">Home</a> › <a href="#">Noleggio</a> › <a href="#">Magnetoterapia</a> › <strong>LaMagneto Pro 1000</strong>
+            </div>
+
+            <div class="wf-product-detail-layout">
+                <!-- Image Gallery -->
+                <div class="wf-product-gallery">
+                    <div class="wf-placeholder-img product-large">
+                        LaMagneto Pro 1000<br>Main Product Photo<br>600×450px
+                    </div>
+                    <div class="wf-thumbnail-row">
+                        <div class="wf-thumbnail active">Foto 1</div>
+                        <div class="wf-thumbnail">Foto 2</div>
+                        <div class="wf-thumbnail">Foto 3</div>
+                        <div class="wf-thumbnail">Video</div>
+                    </div>
+                </div>
+
+                <!-- Product Info -->
+                <div class="wf-product-detail-info">
+                    <span class="wf-badge-category">NOLEGGIO · VENDITA</span>
+                    <h1>LaMagneto Pro 1000 Gauss</h1>
+                    <p class="wf-product-subtitle">Dispositivo di magnetoterapia ad alta frequenza con 2 solenoidi inclusi</p>
+
+                    <div class="wf-stars-large">★★★★★ <span>4.8/5</span> · <a href="#">48 recensioni</a></div>
+
+                    <!-- Rental Pricing -->
+                    <div class="wf-pricing-box">
+                        <h3>💰 Opzioni Noleggio</h3>
+                        <div class="wf-pricing-tiers">
+                            <label class="wf-tier">
+                                <input type="radio" name="tier" checked>
+                                <div class="wf-tier-content">
+                                    <strong>Giornaliero</strong>
+                                    <span class="wf-tier-price">€5,00 / giorno</span>
+                                    <small>Min. 3 giorni</small>
+                                </div>
+                            </label>
+                            <label class="wf-tier selected">
+                                <input type="radio" name="tier">
+                                <div class="wf-tier-content">
+                                    <strong>Settimanale</strong>
+                                    <span class="wf-tier-price">€25,00 / settimana</span>
+                                    <small>Risparmi il 29%</small>
+                                </div>
+                            </label>
+                            <label class="wf-tier">
+                                <input type="radio" name="tier">
+                                <div class="wf-tier-content">
+                                    <strong>Mensile</strong>
+                                    <span class="wf-tier-price">€80,00 / mese</span>
+                                    <small>Risparmi il 47%</small>
+                                </div>
+                            </label>
+                        </div>
+
+                        <div class="wf-rental-config">
+                            <div class="wf-rental-dates">
+                                <label>Data inizio</label>
+                                <input type="date" class="wf-input">
+                                <label>Durata</label>
+                                <select class="wf-input">
+                                    <option>1 settimana</option>
+                                    <option>2 settimane</option>
+                                    <option>3 settimane</option>
+                                    <option>4 settimane</option>
+                                </select>
+                            </div>
+                            <div class="wf-rental-summary">
+                                <div class="wf-summary-row"><span>Noleggio (1 sett.)</span><strong>€25,00</strong></div>
+                                <div class="wf-summary-row"><span>Deposito cauzionale</span><strong>€50,00</strong></div>
+                                <div class="wf-summary-row muted"><span>IVA (22%) inclusa</span><span>€4,51</span></div>
+                                <div class="wf-summary-row total"><span>Totale</span><strong>€75,00</strong></div>
+                                <small>Il deposito viene restituito alla riconsegna</small>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-accent btn-lg btn-block">🛒 Noleggia Ora — €75,00</button>
+                    </div>
+
+                    <!-- Purchase Option -->
+                    <div class="wf-purchase-option">
+                        <p>Oppure <strong>acquistalo</strong>: <span class="wf-price-inline">€890,00</span> <small>IVA inclusa</small></p>
+                        <button class="btn btn-secondary">Aggiungi al Carrello</button>
+                    </div>
+
+                    <!-- Availability -->
+                    <div class="wf-availability">
+                        <h4>📍 Disponibilità</h4>
+                        <div class="wf-avail-row available"><span>✓</span> Roma — 3 unità disponibili</div>
+                        <div class="wf-avail-row available"><span>✓</span> Firenze — 1 unità disponibile</div>
+                    </div>
+
+                    <!-- Wishlist -->
+                    <button class="btn btn-ghost">♡ Salva nei Preferiti</button>
+                </div>
+            </div>
+
+            <!-- Tabs -->
+            <div class="wf-tabs">
+                <div class="wf-tab-nav">
+                    <button class="wf-tab active">Descrizione</button>
+                    <button class="wf-tab">Specifiche</button>
+                    <button class="wf-tab">Recensioni (48)</button>
+                    <button class="wf-tab">Domande (5)</button>
+                </div>
+                <div class="wf-tab-content">
+                    <h3>Descrizione</h3>
+                    <p>Il LaMagneto Pro 1000 è un dispositivo professionale di magnetoterapia ad alta frequenza, ideale per il trattamento domiciliare di patologie ossee e articolari. Dotato di 2 solenoidi flessibili, programmi preimpostati e display LCD intuitivo.</p>
+                    <h4>Caratteristiche principali:</h4>
+                    <ul>
+                        <li>Potenza: 1000 Gauss</li>
+                        <li>Programmi: 35 preimpostati + personalizzabili</li>
+                        <li>Display: LCD retroilluminato</li>
+                        <li>Timer: programmabile fino a 12h</li>
+                        <li>Alimentazione: 220V + batteria integrata</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- PAGE: CHECKOUT (4 STEPS)                        -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <div id="page-checkout" class="page" style="display:none">
+        <button class="back-btn" onclick="showHub()">← Torna all'indice</button>
+        <div class="page-label">PUBLIC WEBSITE</div>
+        <h2 class="page-title">Checkout — 4 Step Lineari</h2>
+
+        <div class="wireframe-container">
+            <div class="wf-header compact">
+                <div class="wf-logo">MIA<span>Medical</span></div>
+                <div style="flex:1"></div>
+                <span>🔒 Pagamento Sicuro</span>
+                <span>📞 800 031962</span>
+            </div>
+
+            <!-- Progress Stepper -->
+            <div class="wf-stepper">
+                <div class="wf-step completed">
+                    <div class="wf-step-number">✓</div>
+                    <span>1. Consegna</span>
+                </div>
+                <div class="wf-step-line completed"></div>
+                <div class="wf-step active">
+                    <div class="wf-step-number">2</div>
+                    <span>2. Dati Personali</span>
+                </div>
+                <div class="wf-step-line"></div>
+                <div class="wf-step">
+                    <div class="wf-step-number">3</div>
+                    <span>3. Pagamento</span>
+                </div>
+                <div class="wf-step-line"></div>
+                <div class="wf-step">
+                    <div class="wf-step-number">4</div>
+                    <span>4. Conferma</span>
+                </div>
+            </div>
+
+            <div class="wf-checkout-layout">
+                <!-- Step Content -->
+                <div class="wf-checkout-main">
+                    <h2>Dati Personali</h2>
+                    <p>Inserisci i tuoi dati per completare l'ordine. I campi con <span style="color:#CC3333">*</span> sono obbligatori.</p>
+
+                    <div class="wf-form">
+                        <div class="wf-form-group">
+                            <label>Nome <span style="color:#CC3333">*</span></label>
+                            <input type="text" class="wf-input" value="Mario" placeholder="Il tuo nome">
+                        </div>
+                        <div class="wf-form-group">
+                            <label>Cognome <span style="color:#CC3333">*</span></label>
+                            <input type="text" class="wf-input" value="Rossi" placeholder="Il tuo cognome">
+                        </div>
+                        <div class="wf-form-group">
+                            <label>Email <span style="color:#CC3333">*</span></label>
+                            <input type="email" class="wf-input" value="mario.rossi@email.it" placeholder="La tua email">
+                            <small class="wf-helper">Riceverai la conferma d'ordine qui</small>
+                        </div>
+                        <div class="wf-form-group">
+                            <label>Telefono <span style="color:#CC3333">*</span></label>
+                            <input type="tel" class="wf-input" value="+39 333 1234567" placeholder="+39...">
+                        </div>
+                        <div class="wf-form-group">
+                            <label>Codice Fiscale <span style="color:#CC3333">*</span></label>
+                            <input type="text" class="wf-input" placeholder="RSSMRA80A01H501Z">
+                            <small class="wf-helper">Necessario per la fatturazione</small>
+                        </div>
+
+                        <div class="wf-invoice-detect">
+                            <span class="wf-badge-info">ℹ️ Fattura B2C (persona fisica)</span>
+                            <small>Tipo fattura rilevato automaticamente. <a href="#">Hai una Partita IVA?</a></small>
+                        </div>
+                    </div>
+
+                    <div class="wf-checkout-actions">
+                        <button class="btn btn-ghost btn-lg">← Indietro</button>
+                        <button class="btn btn-primary btn-lg">Continua al Pagamento →</button>
+                    </div>
+                </div>
+
+                <!-- Order Summary Sidebar -->
+                <aside class="wf-checkout-summary">
+                    <h3>Riepilogo Ordine</h3>
+                    <div class="wf-summary-item">
+                        <div class="wf-summary-thumb">IMG</div>
+                        <div>
+                            <strong>LaMagneto Pro 1000</strong>
+                            <small>Noleggio · 1 settimana</small>
+                            <span>€25,00</span>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="wf-summary-row"><span>Subtotale</span><span>€25,00</span></div>
+                    <div class="wf-summary-row"><span>Deposito</span><span>€50,00</span></div>
+                    <div class="wf-summary-row"><span>Consegna</span><span>Gratuita</span></div>
+                    <div class="wf-summary-row muted"><span>di cui IVA (22%)</span><span>€4,51</span></div>
+                    <div class="wf-summary-row total"><span>Totale</span><strong>€75,00</strong></div>
+                </aside>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- PAGE: STORE LOCATOR                             -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <div id="page-store-locator" class="page" style="display:none">
+        <button class="back-btn" onclick="showHub()">← Torna all'indice</button>
+        <div class="page-label">PUBLIC WEBSITE</div>
+        <h2 class="page-title">Trova Punto Vendita</h2>
+
+        <div class="wireframe-container">
+            <div class="wf-header compact">
+                <div class="wf-logo">MIA<span>Medical</span></div>
+                <div class="wf-search"><input type="text" placeholder="🔍 Cerca..." class="wf-search-input"></div>
+                <div class="wf-header-actions"><span>👤</span> <span>🛒</span></div>
+            </div>
+
+            <div class="wf-breadcrumb">
+                <a href="#">Home</a> › <strong>Punti Vendita</strong>
+            </div>
+
+            <h1 style="text-align:center;margin:24px 0">Trova il Punto Vendita più vicino</h1>
+
+            <div class="wf-store-search">
+                <input type="text" class="wf-input wf-input-large" placeholder="📍 Inserisci il tuo indirizzo o CAP...">
+                <button class="btn btn-primary btn-lg">Cerca</button>
+                <button class="btn btn-ghost">📍 Usa la mia posizione</button>
+            </div>
+
+            <div class="wf-store-layout">
+                <div class="wf-store-list">
+                    <div class="wf-store-card">
+                        <h3>🏥 MIA Medical Roma</h3>
+                        <p>Via Gian Pietro Talamini 44, 00166 Roma</p>
+                        <p>📞 <a href="tel:800031962">800 031962</a></p>
+                        <p>🕐 Lun-Ven: 9:00-18:00 · Sab: 9:00-13:00</p>
+                        <p><strong>📍 15 min in auto</strong> (8.2 km)</p>
+                        <div class="wf-store-actions">
+                            <button class="btn btn-primary">Indicazioni</button>
+                            <button class="btn btn-secondary">Vedi Catalogo</button>
+                        </div>
+                    </div>
+                    <div class="wf-store-card">
+                        <h3>🏥 MIA Medical Firenze</h3>
+                        <p>Viale Guidoni 129, 50127 Firenze</p>
+                        <p>📞 <a href="tel:800031962">800 031962</a></p>
+                        <p>🕐 Lun-Ven: 9:00-18:00 · Sab: 9:00-13:00</p>
+                        <p><strong>📍 2h 45min in auto</strong> (280 km)</p>
+                        <div class="wf-store-actions">
+                            <button class="btn btn-primary">Indicazioni</button>
+                            <button class="btn btn-secondary">Vedi Catalogo</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="wf-store-map">
+                    <div class="wf-placeholder-img map">
+                        🗺️ Mappa Interattiva<br>(Google Maps / Mapbox)<br><br>📍 Pin per ogni branch<br>con popup informativo
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- PAGE: LOGIN                                     -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <div id="page-login" class="page" style="display:none">
+        <button class="back-btn" onclick="showHub()">← Torna all'indice</button>
+        <div class="page-label">PUBLIC WEBSITE</div>
+        <h2 class="page-title">Login / Registrazione</h2>
+
+        <div class="wireframe-container">
+            <div class="wf-header compact" style="justify-content:center">
+                <div class="wf-logo">MIA<span>Medical</span></div>
+            </div>
+
+            <div class="wf-login-container">
+                <div class="wf-login-card">
+                    <h1>Accedi al tuo account</h1>
+                    <p>Scegli il metodo di accesso preferito</p>
+
+                    <!-- SPID -->
+                    <button class="btn btn-spid btn-lg btn-block">
+                        🏛️ Entra con SPID
+                    </button>
+                    <small class="wf-login-note">Metodo raccomandato — sicuro e veloce</small>
+
+                    <!-- CIE -->
+                    <button class="btn btn-cie btn-lg btn-block">
+                        💳 Entra con CIE
+                    </button>
+
+                    <div class="wf-divider"><span>oppure</span></div>
+
+                    <!-- Email/Password -->
+                    <div class="wf-form">
+                        <div class="wf-form-group">
+                            <label>Email</label>
+                            <input type="email" class="wf-input" placeholder="La tua email">
+                        </div>
+                        <div class="wf-form-group">
+                            <label>Password</label>
+                            <input type="password" class="wf-input" placeholder="La tua password">
+                            <a href="#" class="wf-form-link">Password dimenticata?</a>
+                        </div>
+                        <button class="btn btn-primary btn-lg btn-block">Accedi</button>
+                    </div>
+
+                    <div class="wf-divider"></div>
+
+                    <p style="text-align:center">Non hai un account? <a href="#"><strong>Registrati</strong></a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- PAGE: CUSTOMER DASHBOARD                        -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <div id="page-customer-dashboard" class="page" style="display:none">
+        <button class="back-btn" onclick="showHub()">← Torna all'indice</button>
+        <div class="page-label">PUBLIC WEBSITE</div>
+        <h2 class="page-title">Area Cliente — Dashboard</h2>
+
+        <div class="wireframe-container">
+            <div class="wf-header compact">
+                <div class="wf-logo">MIA<span>Medical</span></div>
+                <div style="flex:1"></div>
+                <span>Ciao, Mario! 👤</span>
+                <span>🛒 (0)</span>
+            </div>
+
+            <div class="wf-dashboard-layout">
+                <!-- Customer Sidebar -->
+                <aside class="wf-customer-nav">
+                    <div class="wf-customer-avatar">MR</div>
+                    <h3>Mario Rossi</h3>
+                    <small>mario.rossi@email.it</small>
+                    <nav>
+                        <a href="#" class="active">📊 Panoramica</a>
+                        <a href="#">🛒 Ordini</a>
+                        <a href="#">🔄 Noleggi</a>
+                        <a href="#">🧾 Fatture</a>
+                        <a href="#">♡ Preferiti</a>
+                        <a href="#">👤 Profilo</a>
+                        <a href="#">🔔 Notifiche</a>
+                        <a href="#">💬 Supporto</a>
+                        <a href="#" style="color:#CC3333">Esci</a>
+                    </nav>
+                </aside>
+
+                <!-- Main Content -->
+                <div class="wf-dashboard-main">
+                    <h1>Bentornato, Mario!</h1>
+
+                    <!-- Active Rentals Alert -->
+                    <div class="wf-alert warning">
+                        <strong>⚠️ Hai un noleggio in scadenza tra 2 giorni!</strong>
+                        <p>LaMagneto Pro 1000 — scade il 18/05/2026. <a href="#">Estendi il noleggio</a></p>
+                    </div>
+
+                    <!-- Quick Stats -->
+                    <div class="wf-stats-grid">
+                        <div class="wf-stat-card">
+                            <div class="wf-stat-number">2</div>
+                            <div class="wf-stat-label">Noleggi Attivi</div>
+                        </div>
+                        <div class="wf-stat-card">
+                            <div class="wf-stat-number">5</div>
+                            <div class="wf-stat-label">Ordini Totali</div>
+                        </div>
+                        <div class="wf-stat-card">
+                            <div class="wf-stat-number">1</div>
+                            <div class="wf-stat-label">Notifiche</div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Orders -->
+                    <div class="wf-section-card">
+                        <div class="wf-section-header">
+                            <h3>🛒 Ordini Recenti</h3>
+                            <a href="#">Vedi tutti →</a>
+                        </div>
+                        <table class="wf-table">
+                            <thead><tr><th>Ordine</th><th>Data</th><th>Totale</th><th>Stato</th><th></th></tr></thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>#ORD-2026-001</strong></td>
+                                    <td>10/05/2026</td>
+                                    <td>€25,00</td>
+                                    <td><span class="wf-status delivered">Consegnato</span></td>
+                                    <td><a href="#">Dettagli</a></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>#ORD-2026-002</strong></td>
+                                    <td>12/05/2026</td>
+                                    <td>€890,00</td>
+                                    <td><span class="wf-status processing">In elaborazione</span></td>
+                                    <td><a href="#">Dettagli</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Active Rentals -->
+                    <div class="wf-section-card">
+                        <div class="wf-section-header">
+                            <h3>🔄 Noleggi Attivi</h3>
+                            <a href="#">Vedi tutti →</a>
+                        </div>
+                        <div class="wf-rental-card-active">
+                            <div class="wf-rental-thumb">IMG</div>
+                            <div class="wf-rental-info">
+                                <h4>LaMagneto Pro 1000</h4>
+                                <p>Noleggio settimanale · Roma</p>
+                                <div class="wf-rental-dates">
+                                    <span>📅 Inizio: 11/05/2026</span>
+                                    <span>📅 Fine: 18/05/2026</span>
+                                </div>
+                                <div class="wf-rental-countdown warning">⏰ Scade tra 2 giorni</div>
+                            </div>
+                            <div class="wf-rental-actions">
+                                <button class="btn btn-accent">Estendi</button>
+                                <button class="btn btn-secondary">Dettagli</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- PAGE: ADMIN DASHBOARD                           -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <div id="page-admin-dashboard" class="page" style="display:none">
+        <button class="back-btn" onclick="showHub()">← Torna all'indice</button>
+        <div class="page-label">ADMIN DASHBOARD</div>
+        <h2 class="page-title">Dashboard Overview</h2>
+
+        <div class="wireframe-container admin">
+            <div class="wf-admin-layout">
+                <!-- Admin Sidebar -->
+                <aside class="wf-admin-sidebar">
+                    <div class="wf-admin-logo">MIA<span>Medical</span></div>
+
+                    <!-- Branch Switcher -->
+                    <div class="wf-branch-switcher">
+                        <label>FILIALE</label>
+                        <select class="wf-select-branch">
+                            <option>🏢 Roma — Via Talamini</option>
+                            <option>🏢 Firenze — Viale Guidoni</option>
+                            <option>🌐 Tutte le Filiali</option>
+                        </select>
+                    </div>
+
+                    <nav class="wf-admin-nav">
+                        <a href="#" class="active">📊 Dashboard</a>
+                        <a href="#">📦 Prodotti</a>
+                        <a href="#">🛒 Ordini</a>
+                        <a href="#">🔄 Noleggi</a>
+                        <a href="#">📅 Calendario</a>
+                        <a href="#">📦 Inventario</a>
+                        <a href="#">🧾 Fatture</a>
+                        <a href="#">💬 Supporto</a>
+                        <a href="#">📝 Blog</a>
+                        <a href="#">⭐ Recensioni</a>
+                        <div class="wf-nav-divider"></div>
+                        <a href="#">👥 Utenti</a>
+                        <a href="#">🔐 Ruoli & Permessi</a>
+                        <a href="#">⚙️ Impostazioni</a>
+                    </nav>
+
+                    <div class="wf-admin-user">
+                        <div class="wf-admin-avatar">SA</div>
+                        <div>
+                            <strong>SuperAdmin</strong>
+                            <small>admin@miamedical.it</small>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Main Content -->
+                <div class="wf-admin-main">
+                    <div class="wf-admin-topbar">
+                        <h1>Dashboard</h1>
+                        <div class="wf-admin-topbar-right">
+                            <span>🔔 3</span>
+                            <span>Oggi: 14/05/2026</span>
+                        </div>
+                    </div>
+
+                    <!-- Stats Cards -->
+                    <div class="wf-admin-stats">
+                        <div class="wf-admin-stat">
+                            <small>Ordini Oggi</small>
+                            <div class="wf-admin-stat-num">12</div>
+                            <span class="wf-admin-stat-change positive">↑ 18%</span>
+                        </div>
+                        <div class="wf-admin-stat">
+                            <small>Noleggi Attivi</small>
+                            <div class="wf-admin-stat-num">47</div>
+                            <span class="wf-admin-stat-change positive">↑ 5%</span>
+                        </div>
+                        <div class="wf-admin-stat">
+                            <small>Fatturato Mese</small>
+                            <div class="wf-admin-stat-num">€12.450</div>
+                            <span class="wf-admin-stat-change positive">↑ 23%</span>
+                        </div>
+                        <div class="wf-admin-stat">
+                            <small>Ticket Aperti</small>
+                            <div class="wf-admin-stat-num">3</div>
+                            <span class="wf-admin-stat-change negative">↑ 2</span>
+                        </div>
+                    </div>
+
+                    <div class="wf-admin-grid-2">
+                        <!-- Recent Orders -->
+                        <div class="wf-admin-panel">
+                            <div class="wf-section-header">
+                                <h3>Ordini Recenti</h3>
+                                <a href="#">Vedi tutti</a>
+                            </div>
+                            <table class="wf-table admin">
+                                <thead><tr><th>Ordine</th><th>Cliente</th><th>Totale</th><th>Stato</th></tr></thead>
+                                <tbody>
+                                    <tr><td>#2026-089</td><td>Maria B.</td><td>€75,00</td><td><span class="wf-status processing">Elaborazione</span></td></tr>
+                                    <tr><td>#2026-088</td><td>Luigi V.</td><td>€25,00</td><td><span class="wf-status delivered">Consegnato</span></td></tr>
+                                    <tr><td>#2026-087</td><td>Anna R.</td><td>€890,00</td><td><span class="wf-status pending">Pagamento</span></td></tr>
+                                    <tr><td>#2026-086</td><td>Marco T.</td><td>€40,00</td><td><span class="wf-status delivered">Consegnato</span></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Rentals Due Soon -->
+                        <div class="wf-admin-panel">
+                            <div class="wf-section-header">
+                                <h3>Noleggi in Scadenza</h3>
+                                <a href="#">Vedi tutti</a>
+                            </div>
+                            <table class="wf-table admin">
+                                <thead><tr><th>Cliente</th><th>Prodotto</th><th>Scadenza</th><th>Stato</th></tr></thead>
+                                <tbody>
+                                    <tr><td>Mario R.</td><td>LaMagneto Pro</td><td>18/05</td><td><span class="wf-status overdue">Scade tra 2gg</span></td></tr>
+                                    <tr><td>Sara L.</td><td>Carrozzina Light</td><td>20/05</td><td><span class="wf-status active">Attivo</span></td></tr>
+                                    <tr><td>Paolo G.</td><td>Letto Ortopedico</td><td>25/05</td><td><span class="wf-status active">Attivo</span></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Revenue Chart Placeholder -->
+                    <div class="wf-admin-panel">
+                        <div class="wf-section-header">
+                            <h3>📈 Andamento Fatturato</h3>
+                            <select class="wf-select-small"><option>Ultimi 30 giorni</option><option>Ultimi 90 giorni</option><option>Anno</option></select>
+                        </div>
+                        <div class="wf-placeholder-img chart">
+                            📊 Grafico a linee — Fatturato giornaliero<br>
+                            Asse X: Giorni del mese<br>
+                            Asse Y: € fatturato<br>
+                            Linea blu: questo mese · Linea grigia: mese precedente
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- PAGE: ADMIN PRODUCTS                            -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <div id="page-admin-products" class="page" style="display:none">
+        <button class="back-btn" onclick="showHub()">← Torna all'indice</button>
+        <div class="page-label">ADMIN DASHBOARD</div>
+        <h2 class="page-title">Gestione Prodotti</h2>
+
+        <div class="wireframe-container admin">
+            <div class="wf-admin-layout">
+                <aside class="wf-admin-sidebar compact-ref">
+                    <div class="wf-admin-logo">MIA<span>Medical</span></div>
+                    <div class="wf-branch-switcher"><label>FILIALE</label><select class="wf-select-branch"><option>🏢 Roma</option></select></div>
+                    <nav class="wf-admin-nav">
+                        <a href="#">📊 Dashboard</a>
+                        <a href="#" class="active">📦 Prodotti</a>
+                        <a href="#">🛒 Ordini</a>
+                        <a href="#">🔄 Noleggi</a>
+                    </nav>
+                </aside>
+
+                <div class="wf-admin-main">
+                    <div class="wf-admin-topbar">
+                        <h1>Catalogo Prodotti</h1>
+                        <button class="btn btn-primary">+ Nuovo Prodotto</button>
+                    </div>
+
+                    <!-- Filters Bar -->
+                    <div class="wf-admin-filters">
+                        <input type="text" class="wf-input" placeholder="🔍 Cerca per nome, SKU...">
+                        <select class="wf-select-small"><option>Tutte le categorie</option></select>
+                        <select class="wf-select-small"><option>Tutti i tipi</option><option>Noleggio</option><option>Vendita</option><option>Entrambi</option></select>
+                        <select class="wf-select-small"><option>Stato: Tutti</option><option>Attivo</option><option>Inattivo</option></select>
+                    </div>
+
+                    <!-- Product Table -->
+                    <table class="wf-table admin full">
+                        <thead>
+                            <tr>
+                                <th><input type="checkbox"></th>
+                                <th>Immagine</th>
+                                <th>Nome ↕</th>
+                                <th>SKU</th>
+                                <th>Tipo</th>
+                                <th>Prezzo Base</th>
+                                <th>Stock (Roma)</th>
+                                <th>Stato</th>
+                                <th>Azioni</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td><div class="wf-table-thumb">IMG</div></td>
+                                <td><strong>LaMagneto Pro 1000</strong><br><small>Magnetoterapia</small></td>
+                                <td>MAG-001</td>
+                                <td><span class="wf-badge rental">Noleggio</span></td>
+                                <td>€5,00/g</td>
+                                <td>3 unità</td>
+                                <td><span class="wf-status active">Attivo</span></td>
+                                <td>
+                                    <button class="btn-icon">✏️</button>
+                                    <button class="btn-icon">👁️</button>
+                                    <button class="btn-icon">⋯</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td><div class="wf-table-thumb">IMG</div></td>
+                                <td><strong>Carrozzina Pieghevole Light</strong><br><small>Carrozzine</small></td>
+                                <td>CAR-012</td>
+                                <td><span class="wf-badge both">Entrambi</span></td>
+                                <td>€3,00/g · €450</td>
+                                <td>5 unità</td>
+                                <td><span class="wf-status active">Attivo</span></td>
+                                <td>
+                                    <button class="btn-icon">✏️</button>
+                                    <button class="btn-icon">👁️</button>
+                                    <button class="btn-icon">⋯</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td><div class="wf-table-thumb">IMG</div></td>
+                                <td><strong>Letto Ortopedico Elettrico</strong><br><small>Letti ortopedici</small></td>
+                                <td>LET-003</td>
+                                <td><span class="wf-badge rental">Noleggio</span></td>
+                                <td>€8,00/g</td>
+                                <td><span style="color:#CC3333">0 unità</span></td>
+                                <td><span class="wf-status inactive">Inattivo</span></td>
+                                <td>
+                                    <button class="btn-icon">✏️</button>
+                                    <button class="btn-icon">👁️</button>
+                                    <button class="btn-icon">⋯</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="wf-pagination">
+                        <span>Mostrando 1-20 di 48 prodotti</span>
+                        <div class="wf-pagination-buttons">
+                            <button class="btn-page" disabled>← Prec</button>
+                            <button class="btn-page active">1</button>
+                            <button class="btn-page">2</button>
+                            <button class="btn-page">3</button>
+                            <button class="btn-page">Succ →</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- PAGE: ADMIN ORDERS                              -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <div id="page-admin-orders" class="page" style="display:none">
+        <button class="back-btn" onclick="showHub()">← Torna all'indice</button>
+        <div class="page-label">ADMIN DASHBOARD</div>
+        <h2 class="page-title">Ordini & Noleggi</h2>
+
+        <div class="wireframe-container admin">
+            <div class="wf-admin-layout">
+                <aside class="wf-admin-sidebar compact-ref">
+                    <div class="wf-admin-logo">MIA<span>Medical</span></div>
+                    <div class="wf-branch-switcher"><label>FILIALE</label><select class="wf-select-branch"><option>🏢 Roma</option></select></div>
+                    <nav class="wf-admin-nav">
+                        <a href="#">📊 Dashboard</a>
+                        <a href="#">📦 Prodotti</a>
+                        <a href="#" class="active">🛒 Ordini</a>
+                        <a href="#">🔄 Noleggi</a>
+                    </nav>
+                </aside>
+
+                <div class="wf-admin-main">
+                    <div class="wf-admin-topbar">
+                        <h1>Gestione Ordini</h1>
+                        <div>
+                            <button class="btn btn-secondary">📥 Esporta CSV</button>
+                        </div>
+                    </div>
+
+                    <!-- Tab switcher -->
+                    <div class="wf-tab-nav admin">
+                        <button class="wf-tab active">Tutti (89)</button>
+                        <button class="wf-tab">In attesa (5)</button>
+                        <button class="wf-tab">In elaborazione (8)</button>
+                        <button class="wf-tab">In consegna (3)</button>
+                        <button class="wf-tab">Completati (71)</button>
+                        <button class="wf-tab">Annullati (2)</button>
+                    </div>
+
+                    <!-- Filters -->
+                    <div class="wf-admin-filters">
+                        <input type="text" class="wf-input" placeholder="🔍 Cerca ordine, cliente...">
+                        <input type="date" class="wf-input" style="width:160px">
+                        <span>→</span>
+                        <input type="date" class="wf-input" style="width:160px">
+                    </div>
+
+                    <!-- Orders Table -->
+                    <table class="wf-table admin full">
+                        <thead>
+                            <tr>
+                                <th>Ordine ↕</th>
+                                <th>Cliente</th>
+                                <th>Tipo</th>
+                                <th>Data ↕</th>
+                                <th>Totale ↕</th>
+                                <th>Consegna</th>
+                                <th>Stato</th>
+                                <th>Azioni</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>#2026/ROM/089</strong></td>
+                                <td>Maria Bianchi<br><small>maria.b@email.it</small></td>
+                                <td><span class="wf-badge rental">Noleggio</span></td>
+                                <td>14/05/2026</td>
+                                <td>€75,00</td>
+                                <td>Domicilio</td>
+                                <td><span class="wf-status processing">Elaborazione</span></td>
+                                <td><button class="btn btn-secondary btn-sm">Dettagli</button></td>
+                            </tr>
+                            <tr>
+                                <td><strong>#2026/ROM/088</strong></td>
+                                <td>Luigi Verdi<br><small>luigi.v@email.it</small></td>
+                                <td><span class="wf-badge purchase">Acquisto</span></td>
+                                <td>14/05/2026</td>
+                                <td>€890,00</td>
+                                <td>Ritiro</td>
+                                <td><span class="wf-status pending">Pagamento</span></td>
+                                <td><button class="btn btn-secondary btn-sm">Dettagli</button></td>
+                            </tr>
+                            <tr>
+                                <td><strong>#2026/ROM/087</strong></td>
+                                <td>Anna Rossi<br><small>anna.r@email.it</small></td>
+                                <td><span class="wf-badge rental">Noleggio</span></td>
+                                <td>13/05/2026</td>
+                                <td>€40,00</td>
+                                <td>Domicilio</td>
+                                <td><span class="wf-status delivered">Consegnato</span></td>
+                                <td><button class="btn btn-secondary btn-sm">Dettagli</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- PAGE: ADMIN ROLES                               -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <div id="page-admin-roles" class="page" style="display:none">
+        <button class="back-btn" onclick="showHub()">← Torna all'indice</button>
+        <div class="page-label">ADMIN DASHBOARD</div>
+        <h2 class="page-title">Ruoli & Permessi (RBAC)</h2>
+
+        <div class="wireframe-container admin">
+            <div class="wf-admin-layout">
+                <aside class="wf-admin-sidebar compact-ref">
+                    <div class="wf-admin-logo">MIA<span>Medical</span></div>
+                    <nav class="wf-admin-nav">
+                        <a href="#">📊 Dashboard</a>
+                        <a href="#">👥 Utenti</a>
+                        <a href="#" class="active">🔐 Ruoli & Permessi</a>
+                    </nav>
+                </aside>
+
+                <div class="wf-admin-main">
+                    <div class="wf-admin-topbar">
+                        <h1>Ruoli & Permessi</h1>
+                        <button class="btn btn-primary">+ Nuovo Ruolo</button>
+                    </div>
+
+                    <!-- Roles List -->
+                    <div class="wf-roles-grid">
+                        <div class="wf-role-card">
+                            <div class="wf-role-header">
+                                <h3>👑 SuperAdmin</h3>
+                                <span class="wf-badge system">Sistema</span>
+                            </div>
+                            <p>Accesso completo a tutte le filiali e funzionalità. Non modificabile.</p>
+                            <div class="wf-role-meta">
+                                <span>1 utente</span>
+                                <span>Tutte le filiali</span>
+                                <span>Tutti i permessi</span>
+                            </div>
+                        </div>
+
+                        <div class="wf-role-card">
+                            <div class="wf-role-header">
+                                <h3>🔧 Admin</h3>
+                                <span class="wf-badge preset">Preset</span>
+                            </div>
+                            <p>Accesso completo su prodotti, ordini, feedback, recensioni nella filiale assegnata.</p>
+                            <div class="wf-role-meta">
+                                <span>2 utenti</span>
+                                <span>24 permessi</span>
+                            </div>
+                            <div class="wf-role-actions">
+                                <button class="btn btn-secondary btn-sm">Modifica Permessi</button>
+                                <button class="btn btn-ghost btn-sm">Assegna Utenti</button>
+                            </div>
+                        </div>
+
+                        <div class="wf-role-card">
+                            <div class="wf-role-header">
+                                <h3>📝 Moderatore</h3>
+                                <span class="wf-badge preset">Preset</span>
+                            </div>
+                            <p>Gestione prodotti, blog, risposte a recensioni e domande.</p>
+                            <div class="wf-role-meta">
+                                <span>1 utente</span>
+                                <span>12 permessi</span>
+                            </div>
+                            <div class="wf-role-actions">
+                                <button class="btn btn-secondary btn-sm">Modifica Permessi</button>
+                                <button class="btn btn-ghost btn-sm">Assegna Utenti</button>
+                            </div>
+                        </div>
+
+                        <div class="wf-role-card">
+                            <div class="wf-role-header">
+                                <h3>🚚 Resp. Consegne</h3>
+                                <span class="wf-badge preset">Preset</span>
+                            </div>
+                            <p>Visualizzazione ordini in attesa, aggiornamento stato consegna.</p>
+                            <div class="wf-role-meta">
+                                <span>3 utenti</span>
+                                <span>6 permessi</span>
+                            </div>
+                            <div class="wf-role-actions">
+                                <button class="btn btn-secondary btn-sm">Modifica Permessi</button>
+                                <button class="btn btn-ghost btn-sm">Assegna Utenti</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Permission Matrix -->
+                    <div class="wf-admin-panel" style="margin-top:32px">
+                        <h3>Matrice Permessi — Admin</h3>
+                        <table class="wf-table admin full permission-matrix">
+                            <thead>
+                                <tr><th>Risorsa</th><th>Lettura</th><th>Scrittura</th><th>Modifica</th><th>Eliminazione</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><strong>Prodotti</strong></td><td>✅</td><td>✅</td><td>✅</td><td>✅</td></tr>
+                                <tr><td><strong>Ordini</strong></td><td>✅</td><td>✅</td><td>✅</td><td>❌</td></tr>
+                                <tr><td><strong>Noleggi</strong></td><td>✅</td><td>✅</td><td>✅</td><td>❌</td></tr>
+                                <tr><td><strong>Fatture</strong></td><td>✅</td><td>✅</td><td>❌</td><td>❌</td></tr>
+                                <tr><td><strong>Blog</strong></td><td>✅</td><td>✅</td><td>✅</td><td>✅</td></tr>
+                                <tr><td><strong>Recensioni</strong></td><td>✅</td><td>✅</td><td>❌</td><td>❌</td></tr>
+                                <tr><td><strong>Utenti</strong></td><td>✅</td><td>❌</td><td>❌</td><td>❌</td></tr>
+                                <tr><td><strong>Ruoli</strong></td><td>❌</td><td>❌</td><td>❌</td><td>❌</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- PAGE: DESIGN SYSTEM - COLORS                    -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <div id="page-ds-colors" class="page" style="display:none">
+        <button class="back-btn" onclick="showHub()">← Torna all'indice</button>
+        <div class="page-label">DESIGN SYSTEM</div>
+        <h2 class="page-title">Colori</h2>
+
+        <div class="ds-container">
+            <h3>Primary</h3>
+            <div class="ds-color-row">
+                <div class="ds-swatch" style="background:#0066CC"><span>#0066CC</span><small>Primary / Blu Medico</small></div>
+                <div class="ds-swatch" style="background:#004C99"><span>#004C99</span><small>Primary Dark</small></div>
+                <div class="ds-swatch" style="background:#E6F0FF;color:#1A1A2E"><span>#E6F0FF</span><small>Primary Light</small></div>
+            </div>
+
+            <h3>Secondary</h3>
+            <div class="ds-color-row">
+                <div class="ds-swatch" style="background:#00875A"><span>#00875A</span><small>Secondary / Verde</small></div>
+                <div class="ds-swatch" style="background:#006644"><span>#006644</span><small>Secondary Dark</small></div>
+                <div class="ds-swatch" style="background:#E6F5EE;color:#1A1A2E"><span>#E6F5EE</span><small>Secondary Light</small></div>
+            </div>
+
+            <h3>Accent & Actions</h3>
+            <div class="ds-color-row">
+                <div class="ds-swatch" style="background:#FF8800"><span>#FF8800</span><small>Accent / Arancione</small></div>
+                <div class="ds-swatch" style="background:#CC3333"><span>#CC3333</span><small>Danger / Rosso</small></div>
+                <div class="ds-swatch" style="background:#E6A800"><span>#E6A800</span><small>Warning / Giallo</small></div>
+            </div>
+
+            <h3>Neutrals</h3>
+            <div class="ds-color-row">
+                <div class="ds-swatch" style="background:#1A1A2E"><span>#1A1A2E</span><small>Text Primary</small></div>
+                <div class="ds-swatch" style="background:#4A4A68"><span>#4A4A68</span><small>Text Secondary</small></div>
+                <div class="ds-swatch" style="background:#8888A0"><span>#8888A0</span><small>Text Muted</small></div>
+                <div class="ds-swatch" style="background:#D0D0DC;color:#1A1A2E"><span>#D0D0DC</span><small>Border</small></div>
+                <div class="ds-swatch" style="background:#F5F5FA;color:#1A1A2E"><span>#F5F5FA</span><small>Background</small></div>
+                <div class="ds-swatch" style="background:#FFFFFF;color:#1A1A2E;border:1px solid #D0D0DC"><span>#FFFFFF</span><small>Surface</small></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- PAGE: DESIGN SYSTEM - TYPOGRAPHY                -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <div id="page-ds-typography" class="page" style="display:none">
+        <button class="back-btn" onclick="showHub()">← Torna all'indice</button>
+        <div class="page-label">DESIGN SYSTEM</div>
+        <h2 class="page-title">Tipografia</h2>
+
+        <div class="ds-container">
+            <div class="ds-type-sample" style="font:700 2.5rem/1.2 Inter,sans-serif">Display 1 — 40px / 700</div>
+            <div class="ds-type-sample" style="font:700 2rem/1.25 Inter,sans-serif">Display 2 — 32px / 700</div>
+            <div class="ds-type-sample" style="font:600 1.75rem/1.3 Inter,sans-serif">Heading 1 — 28px / 600</div>
+            <div class="ds-type-sample" style="font:600 1.5rem/1.35 Inter,sans-serif">Heading 2 — 24px / 600</div>
+            <div class="ds-type-sample" style="font:600 1.25rem/1.4 Inter,sans-serif">Heading 3 — 20px / 600</div>
+            <div class="ds-type-sample" style="font:400 1.125rem/1.7 Inter,sans-serif">Body Large — 18px / 400 (default body text for public site)</div>
+            <div class="ds-type-sample" style="font:400 1rem/1.6 Inter,sans-serif">Body — 16px / 400 (secondary text)</div>
+            <div class="ds-type-sample" style="font:400 0.875rem/1.5 Inter,sans-serif">Body Small — 14px / 400 (use sparingly)</div>
+            <div class="ds-type-sample" style="font:500 1rem/1.4 Inter,sans-serif">Label — 16px / 500</div>
+            <div class="ds-type-sample" style="font:600 0.8125rem/1.3 Inter,sans-serif;text-transform:uppercase;letter-spacing:0.02em">Overline — 13px / 600 / uppercase</div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════ -->
+    <!-- PAGE: DESIGN SYSTEM - COMPONENTS                -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <div id="page-ds-components" class="page" style="display:none">
+        <button class="back-btn" onclick="showHub()">← Torna all'indice</button>
+        <div class="page-label">DESIGN SYSTEM</div>
+        <h2 class="page-title">Componenti</h2>
+
+        <div class="ds-container">
+            <!-- Buttons -->
+            <h3>Bottoni</h3>
+            <div class="ds-row">
+                <button class="btn btn-primary btn-lg">Primary Large</button>
+                <button class="btn btn-primary">Primary Medium</button>
+                <button class="btn btn-primary btn-sm">Primary Small</button>
+            </div>
+            <div class="ds-row">
+                <button class="btn btn-secondary btn-lg">Secondary Large</button>
+                <button class="btn btn-accent btn-lg">Accent CTA</button>
+                <button class="btn btn-danger">Danger</button>
+                <button class="btn btn-ghost">Ghost</button>
+            </div>
+            <div class="ds-row">
+                <button class="btn btn-primary btn-lg" disabled>Disabled</button>
+                <button class="btn btn-primary btn-lg loading">⏳ Attendere...</button>
+            </div>
+
+            <!-- Inputs -->
+            <h3>Input Fields</h3>
+            <div class="ds-inputs">
+                <div class="wf-form-group">
+                    <label>Label Standard</label>
+                    <input type="text" class="wf-input" placeholder="Placeholder text">
+                    <small class="wf-helper">Helper text sotto l'input</small>
+                </div>
+                <div class="wf-form-group">
+                    <label>Campo con Errore <span style="color:#CC3333">*</span></label>
+                    <input type="text" class="wf-input error" value="abc">
+                    <small class="wf-error">⚠ Inserisci un valore valido</small>
+                </div>
+                <div class="wf-form-group">
+                    <label>Campo Valido</label>
+                    <input type="text" class="wf-input success" value="mario.rossi@email.it">
+                </div>
+            </div>
+
+            <!-- Badges -->
+            <h3>Status Badges</h3>
+            <div class="ds-row">
+                <span class="wf-status active">Attivo</span>
+                <span class="wf-status processing">Elaborazione</span>
+                <span class="wf-status delivered">Consegnato</span>
+                <span class="wf-status pending">In Attesa</span>
+                <span class="wf-status overdue">Scaduto</span>
+                <span class="wf-status inactive">Annullato</span>
+            </div>
+
+            <!-- Alerts -->
+            <h3>Alert & Messaggi</h3>
+            <div class="wf-alert success">✓ Ordine confermato con successo!</div>
+            <div class="wf-alert error">⚠ Errore nel pagamento. Riprova.</div>
+            <div class="wf-alert warning">⚠ Il tuo noleggio scade tra 2 giorni.</div>
+            <div class="wf-alert info">ℹ Nuovi prodotti disponibili nel catalogo.</div>
+
+            <!-- Cards -->
+            <h3>Product Card</h3>
+            <div style="max-width:320px">
+                <div class="wf-product-card">
+                    <div class="wf-placeholder-img product">Product Image</div>
+                    <div class="wf-product-info">
+                        <span class="wf-badge-category">NOLEGGIO</span>
+                        <h3>Nome Prodotto</h3>
+                        <p>Breve descrizione del prodotto</p>
+                        <div class="wf-stars">★★★★☆ (23)</div>
+                        <div class="wf-price">€5,00 <small>/giorno</small></div>
+                        <small class="wf-vat">IVA inclusa</small>
+                        <button class="btn btn-primary btn-block">Noleggia Ora</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            document.querySelector('.hub').style.display = 'none';
+            document.querySelectorAll('.page').forEach(p => p.style.display = 'none');
+            document.getElementById('page-' + pageId).style.display = 'block';
+            window.scrollTo(0, 0);
+        }
+        function showHub() {
+            document.querySelectorAll('.page').forEach(p => p.style.display = 'none');
+            document.querySelector('.hub').style.display = 'block';
+            window.scrollTo(0, 0);
+        }
+    </script>
+</body>
+</html>
